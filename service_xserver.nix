@@ -32,10 +32,12 @@
   services.xserver.displayManager = {
     sddm.enable = false;
     lightdm = {
-      enable = true;
+      enable = false;
       #warning: The Pantheon greeter is suboptimal in NixOS and can possibly put you in a situation where you cannot start a session when switching desktopManagers.
       greeters.pantheon.enable = false;
     };
+    gdm.enable = true;
+    gdm.wayland = true;
   };
 
   #services.xserver.windowManager.i3.enable = true;
@@ -48,9 +50,9 @@
       enableXfwm = false;
     };
     plasma5.enable = false;
-    gnome3.enable = false;
-    mate.enable = false;
-    pantheon.enable = true;
+    gnome3.enable = true;
+    mate.enable = true;
+    pantheon.enable = false;
   };
   
   services.xserver.windowManager.bspwm = {

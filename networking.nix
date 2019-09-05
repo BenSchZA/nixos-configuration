@@ -77,6 +77,7 @@
     6079
     57621
     8545
+    3000 # development
   ];
   networking.firewall.allowedUDPPorts = [
     1714
@@ -134,6 +135,7 @@
     50624
     50625
     8545
+    3000 # development port
   ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;

@@ -38,13 +38,17 @@
   };
 
   # localhost:9000
-  services.peerflix.enable = false;
+  services.peerflix.enable = true;
   
   # localhost:8384
   services.syncthing = {
     enable = false;
     user = "bscholtz";
     dataDir = "/home/bscholtz/.syncthing";
+  };
+
+  services.gnome3.gnome-keyring = {
+    enable = true;
   };
 
   services.fwupd.enable = true;
@@ -54,7 +58,7 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
-  services.sshguard.enable = true;
+  services.sshguard.enable = false;
 
   services.openvpn.servers = {
     homeVPN = {
@@ -63,7 +67,7 @@
     };
   };
 
-  services.mongodb.enable = false;
+  services.mongodb.enable = true;
   services.vault.enable = false; 
   services.keybase.enable = false;
 

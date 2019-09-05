@@ -40,7 +40,7 @@ in {
   imports = [
     "${
       builtins.fetchTarball
-      "https://github.com/rycee/home-manager/archive/release-18.09.tar.gz"
+      "https://github.com/rycee/home-manager/archive/release-19.03.tar.gz"
     }/nixos"
   ];
 
@@ -86,7 +86,6 @@ in {
       pkgs.qtcreator
       pkgs.appimage-run
       #pkgs.idea.idea-ultimate
-      #pkgs.haskell.compiler.ghc862
       pkgs.neofetch
       pkgs.ranger
       pkgs.thefuck
@@ -102,8 +101,10 @@ in {
       pkgs.vault
       pkgs.kubectl
       pkgs.minikube
-      pkgs.robomongo
-      #pkgs.mongodb-compass
+      
+      #pkgs.robomongo
+      pkgs.mongodb-compass
+      
       pkgs.octave
       pkgs.vscode
       pkgs.kicad
@@ -142,7 +143,7 @@ in {
       pkgs.networkmanagerapplet
       pkgs.psmisc
 
-      pkgs.vivaldi
+      #pkgs.vivaldi
       #pkgs.vivaldi-ffmpeg-codecs
       pkgs.speedtest-cli
       pkgs.cachix
@@ -156,6 +157,7 @@ in {
       #unstable.postman
       pkgs.openscad
       pkgs.kompose
+      #pkgs.seahorse # GPG key management GUI
     ];
 
     programs.home-manager.enable = true;

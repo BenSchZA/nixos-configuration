@@ -75,7 +75,8 @@
       theme = "avit";
       plugins = [ 
         "z" 
-        "nix-shell" 
+        "nix-shell"
+        #"fzf" 
       ];
     };
     autosuggestions.enable = true;
@@ -112,6 +113,8 @@
     inconsolata
     powerline-fonts
   ];
+
+  fonts.fontconfig.ultimate.enable = true;
 
   # Set your time zone.
   time.timeZone = "Africa/Johannesburg";
