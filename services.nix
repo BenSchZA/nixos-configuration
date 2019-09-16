@@ -68,6 +68,22 @@
   };
 
   services.mongodb.enable = true;
+
+  services.postgresql = {
+    enable = true;
+    package = pkgs.postgresql_10;
+    enableTCPIP = true;
+    authentication = pkgs.lib.mkOverride 10 ''
+      local all all trust
+      host all all all trust
+    '';
+    initialScript = pkgs.writeText "backend-initScript" ''
+      CREATE USER postgres;
+      ALTER USER postgres PASSWORD 'postgres';
+      ALTER USER postgres WITH SUPERUSER;
+    '';
+  };
+
   services.vault.enable = false; 
   services.keybase.enable = false;
 
