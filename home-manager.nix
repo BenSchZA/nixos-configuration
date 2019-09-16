@@ -95,8 +95,10 @@ in {
       pkgs.chromium
       pkgs.macchanger
       pkgs.minecraft
-      pkgs.yarn
-      pkgs.nodejs-10_x
+      
+      #pkgs.yarn
+      #pkgs.nodejs-10_x
+      
       unstable.terraform
       pkgs.vault
       pkgs.kubectl
