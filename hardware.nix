@@ -29,7 +29,7 @@
   boot.extraModprobeConfig = ''
     options zfs zfs_arc_max=1073741824
   ''; #options ath10k_core skip_otp=y
-  boot.kernel.sysctl = { "vm.swappiness" = 60; };
+  boot.kernel.sysctl = { "vm.swappiness" = 1; };
 
   #boot.loader.grub.copyKernels = true;
   boot.kernelPatches = [
