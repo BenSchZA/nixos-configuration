@@ -37,7 +37,7 @@
       greeters.pantheon.enable = false;
     };
     gdm.enable = true;
-    gdm.wayland = true;
+    gdm.wayland = false;
   };
 
   #services.xserver.windowManager.i3.enable = true;

@@ -1,1 +1,1 @@
-{ imports = [ <nixpkgs/nixos/modules/installer/scan/not-detected.nix> ./hardware/laptop.nix ]; }
+{ imports = [ <nixpkgs/nixos/modules/installer/scan/not-detected.nix> ./hardware/desktop.nix ]; }

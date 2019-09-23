@@ -4,7 +4,7 @@ with import <nixpkgs> { };
 let
 
   nixos = import <nixos> { };
-  unstable = import <nixpkgs-unstable> { };
+  #unstable = import <nixpkgs-unstable> { };
 
   colours = {
     accent = "#E47023";
@@ -99,7 +99,7 @@ in {
       #pkgs.yarn
       #pkgs.nodejs-10_x
       
-      unstable.terraform
+      #unstable.terraform
       pkgs.vault
       pkgs.kubectl
       pkgs.minikube
@@ -137,8 +137,12 @@ in {
       pkgs.xdotool
       pkgs.xfce.xfce4-appfinder
       pkgs.xfce.xfce4-panel
+
       pkgs.pciutils
       pkgs.gnumake
+      pkgs.gcc
+      pkgs.cudatoolkit
+      
       pkgs.material-icons
       pkgs.bats
       pkgs.dpkg
