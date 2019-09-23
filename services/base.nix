@@ -37,9 +37,9 @@
   
   # localhost:8384
   services.syncthing = {
-    enable = false;
-    user = "bscholtz";
-    dataDir = "/home/bscholtz/.syncthing";
+    enable = true;
+    user = config.networking.hostName;
+    dataDir = "${config.users.users.bscholtz.home}/.syncthing";
   };
 
   services.gnome3.gnome-keyring = {
@@ -57,7 +57,7 @@
 
   services.openvpn.servers = {
     homeVPN = {
-      config = "config /home/bscholtz/VPNGate/homeVPN.ovpn ";
+      config = "config ${config.users.users.bscholtz.home}/VPNGate/homeVPN.ovpn ";
       autoStart = false;
     };
   };

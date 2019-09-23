@@ -4,11 +4,6 @@
     ./base_laptop.nix
   ];
 
-  boot.kernelParams = [
-    "zswap.enabled=1"
-    "zfs.zfs_arc_max=1073741824"
-  ];
-
   #boot.extraModulePackages = [ ];
   boot.extraModprobeConfig = ''
     options zfs zfs_arc_max=1073741824
@@ -33,6 +28,8 @@
     "i915.fastboot=1"
     #"i915.enable_rc6=1"
     #"i915.modeset=1"
+    "zswap.enabled=1"
+    "zfs.zfs_arc_max=1073741824"
   ];
 
   nix.maxJobs = lib.mkDefault 4; # 8

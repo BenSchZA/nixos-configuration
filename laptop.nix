@@ -9,6 +9,7 @@
     # Include the results of the hardware scan.
     #<nixos-hardware/dell/xps/13-9360>
     /home/bscholtz/workspace/Nix/nixos-hardware/dell/xps/13-9360
+    ./base.nix
     ./hardware-configuration.nix
     ./services/base.nix
     ./services/zfs.nix

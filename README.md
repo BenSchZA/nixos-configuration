@@ -2,6 +2,11 @@
 
 See https://nixos.org/
 
+## Setup Example
+
+1. `ln -s laptop.nix configuration.nix`
+2. `ln -s hardware/laptop.nix hardware-configuration.nix`
+
 ## Neofetch Output
 
 ```

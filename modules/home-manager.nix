@@ -138,10 +138,10 @@ in {
       pkgs.xfce.xfce4-appfinder
       pkgs.xfce.xfce4-panel
 
-      pkgs.pciutils
       pkgs.gnumake
-      pkgs.gcc
-      pkgs.cudatoolkit
+      # pkgs.pciutils
+      # pkgs.gcc
+      # pkgs.cudatoolkit
       
       pkgs.material-icons
       pkgs.bats
