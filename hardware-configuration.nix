@@ -1,1 +1,0 @@
-hardware/desktop.nix

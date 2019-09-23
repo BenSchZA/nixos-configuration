@@ -1,2 +1,4 @@
 **/secret.nix
 secret.nix
+configuration.nix
+hardware-configuration.nix
