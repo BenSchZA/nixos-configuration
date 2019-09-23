@@ -1,1 +1,1 @@
-hardware/laptop.nix
+hardware/desktop.nix
