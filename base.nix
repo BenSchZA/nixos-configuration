@@ -108,4 +108,21 @@
   # started in user sessions.
   # programs.mtr.enable = true;
   # programs.gnupg.agent = { enable = true; enableSSHSupport = true; };
+
+  # Enable sound.
+  sound.enable = true;
+  hardware = {
+    pulseaudio = {
+      enable = true;
+      package = pkgs.pulseaudioFull;
+    };
+    cpu.intel.updateMicrocode = true;
+    bluetooth.enable = true;
+    enableAllFirmware = true;
+    enableRedistributableFirmware = true;
+    # Steam setup
+    opengl.enable = true;
+    opengl.driSupport32Bit = true;
+    pulseaudio.support32Bit = true;
+  };
 }

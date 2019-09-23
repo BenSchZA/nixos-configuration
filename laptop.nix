@@ -30,23 +30,6 @@
   powerManagement.enable = true;
   #powerManagement.cpuFreqGovernor = null; # Managed by tlp
 
-  # Enable sound.
-  sound.enable = true;
-  hardware = {
-    pulseaudio = {
-      enable = true;
-      package = pkgs.pulseaudioFull;
-    };
-    cpu.intel.updateMicrocode = true;
-    bluetooth.enable = true;
-    enableAllFirmware = true;
-    enableRedistributableFirmware = true;
-    # Steam setup
-    opengl.enable = true;
-    opengl.driSupport32Bit = true;
-    pulseaudio.support32Bit = true;
-  };
-
   services.earlyoom = {
     enable = true;
     freeMemThreshold = 15;
