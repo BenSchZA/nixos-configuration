@@ -41,9 +41,9 @@
       l = "ls -alh";
       ll = "ls -l";
       #ls = "ls --color=tty";
-      ls = "exa";
+      #ls = "exa";
       cat = "bat";
-      find = "fd";
+      #find = "fd";
       #ssh-add = "eval `ssh-agent` && sudo ssh-add";
       nixos-switch = "sudo nixos-rebuild switch";
       refresh-kde-menu = "kbuildsycoca5";

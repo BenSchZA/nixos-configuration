@@ -83,6 +83,39 @@
      extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
   };
 
+  # List packages installed in system profile. To search, run:
+  # $ nix search wget
+  environment.systemPackages = with pkgs; [
+    kgpg
+    polybar
+    wget
+    vim
+    firefox
+    networkmanager
+    atom
+    clang
+    kate
+    git
+    pass
+    terminator
+    vlc
+    remind
+    borgbackup
+    gnupg
+    filelight
+    ntfs3g
+    killall
+    ngrok
+    ranger
+    bind
+    nmap
+
+    gnumake
+    pciutils
+    gcc
+    cudatoolkit
+  ];
+
   # This value determines the NixOS release with which your system is to be
   # compatible, in order to avoid breaking some software such as database
   # servers. You should change this only after NixOS release notes say you

@@ -137,11 +137,6 @@ in {
       pkgs.xdotool
       pkgs.xfce.xfce4-appfinder
       pkgs.xfce.xfce4-panel
-
-      pkgs.gnumake
-      # pkgs.pciutils
-      # pkgs.gcc
-      # pkgs.cudatoolkit
       
       pkgs.material-icons
       pkgs.bats

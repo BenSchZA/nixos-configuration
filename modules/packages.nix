@@ -18,33 +18,5 @@
     };
   };
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    kgpg
-    polybar
-    wget
-    vim
-    firefox
-    networkmanager
-    atom
-    clang
-    kate
-    git
-    pass
-    terminator
-    vlc
-    remind
-    borgbackup
-    gnupg
-    filelight
-    ntfs3g
-    killall
-    ngrok
-    ranger
-    bind
-    nmap
-  ];
-
   nixpkgs.config.firefox.enableAdobeFlash = false;
 }
