@@ -4,10 +4,10 @@
     ./base_laptop.nix
   ];
 
-  #boot.extraModulePackages = [ ];
   boot.extraModprobeConfig = ''
     options zfs zfs_arc_max=1073741824
-  ''; #options ath10k_core skip_otp=y
+    options zfs zfs_arc_sys_free=1073741824
+  '';
 
   boot.kernel.sysctl = { "vm.swappiness" = 1; };
 
@@ -30,6 +30,7 @@
     #"i915.modeset=1"
     "zswap.enabled=1"
     "zfs.zfs_arc_max=1073741824"
+    "zfs.zfs_arc_sys_free=1073741824"
   ];
 
   nix.maxJobs = lib.mkDefault 4; # 8
