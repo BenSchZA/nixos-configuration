@@ -5,6 +5,7 @@
     ./service_zfs.nix
     ./service_power.nix
     ./service_xserver.nix
+    ./service_xrdp.nix
   ];
 
   services.undervolt = {

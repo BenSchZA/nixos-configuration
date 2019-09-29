@@ -76,6 +76,7 @@
     57621
     8545
     3000 # development
+    3389 # rdp
   ];
   networking.firewall.allowedUDPPorts = [
     1714
@@ -134,6 +135,7 @@
     50625
     8545
     3000 # development port
+    3389 # rdp
   ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;

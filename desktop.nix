@@ -12,6 +12,7 @@
     ./services/zfs.nix
     ./services/power.nix
     ./services/xserver.nix
+    ./services/xrdp.nix
     ./modules/virtualization.nix
     ./modules/packages.nix
     ./modules/networking.nix
@@ -23,10 +24,12 @@
   networking.hostId = "3f3a8aa4";
 
   services.xserver.videoDrivers = [ "nvidia" ]; 
-  systemd.services.nvidia-control-devices = {
-    wantedBy = [ "multi-user.target" ];
-    serviceConfig.ExecStart = "${pkgs.linuxPackages.nvidia_x11}/bin/nvidia-smi";
-  };
+  
+  # CUDA support
+  #systemd.services.nvidia-control-devices = {
+  #  wantedBy = [ "multi-user.target" ];
+  #  serviceConfig.ExecStart = "${pkgs.linuxPackages.nvidia_x11}/bin/nvidia-smi";
+  #};
 
   #services.xserver.displayManager.gdm.enable = true;
   #services.xserver.desktopManager.gnome3.enable = true;
