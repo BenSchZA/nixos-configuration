@@ -13,6 +13,7 @@
     ./services/power.nix
     ./services/xserver.nix
     ./services/xrdp.nix
+    ./services/traefik.nix
     ./modules/virtualization.nix
     ./modules/packages.nix
     ./modules/networking.nix
@@ -20,16 +21,37 @@
     ./secret.nix
   ];
 
+  #nix.nixPath = [
+  #  "nixpkgs=/home/bscholtz/workspace/nixpkgs"
+  #  "nixos-config=/etc/nixos/configuration.nix"
+  #];
+
   networking.hostName = "nixos-desktop"; # Define your hostname.
   networking.hostId = "3f3a8aa4";
 
   services.xserver.videoDrivers = [ "nvidia" ]; 
+
+  services.xserver.desktopManager = {
+    default = "plasma5";
+    xterm.enable = false;
+    xfce = {
+      enable = false;
+      noDesktop = true;
+      enableXfwm = false;
+    };
+    plasma5.enable = true;
+    gnome3.enable = true;
+    mate.enable = false;
+    pantheon.enable = false;
+  };
   
   # CUDA support
-  #systemd.services.nvidia-control-devices = {
-  #  wantedBy = [ "multi-user.target" ];
-  #  serviceConfig.ExecStart = "${pkgs.linuxPackages.nvidia_x11}/bin/nvidia-smi";
-  #};
+  systemd.services.nvidia-control-devices = {
+    wantedBy = [ "multi-user.target" ];
+    serviceConfig.ExecStart = "/run/current-system/sw/bin/nvidia-smi"; #"${pkgs.linuxPackages.nvidia_x11}/bin/nvidia-smi";
+  };
+
+  services.dbus.packages = with pkgs; [ gnome3.dconf gnome2.GConf hamster-time-tracker];
 
   #services.xserver.displayManager.gdm.enable = true;
   #services.xserver.desktopManager.gnome3.enable = true;
@@ -115,8 +137,9 @@
 
     gnumake
     pciutils
-    gcc
-    cudatoolkit
+    #gcc
+    #cudatoolkit
+    linuxPackages.nvidia_x11
   ];
 
   # This value determines the NixOS release with which your system is to be

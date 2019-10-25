@@ -30,6 +30,20 @@
   powerManagement.enable = true;
   #powerManagement.cpuFreqGovernor = null; # Managed by tlp
 
+  services.xserver.desktopManager = {
+    default = "bspwm";
+    xterm.enable = false;
+    xfce = {
+      enable = false;
+      noDesktop = true;
+      enableXfwm = false;
+    };
+    plasma5.enable = false;
+    gnome3.enable = true;
+    mate.enable = false;
+    pantheon.enable = false;
+  };
+
   services.earlyoom = {
     enable = true;
     freeMemThreshold = 15;
