@@ -4,7 +4,7 @@ with import <nixpkgs> { };
 let
 
   nixos = import <nixos> { };
-  unstable = import <nixpkgs-unstable> { };
+  #unstable = import <nixpkgs-unstable> { };
 
   colours = {
     accent = "#E47023";
@@ -60,7 +60,7 @@ in {
       pkgs.emacs
       pkgs.kdeconnect
       pkgs.simplescreenrecorder
-      pkgs.docker_compose
+      pkgs.docker-compose
       pkgs.dropbox
       pkgs.gitkraken
       pkgs.homesick
@@ -99,7 +99,7 @@ in {
       #pkgs.yarn
       #pkgs.nodejs-10_x
       
-      unstable.terraform
+      terraform
       pkgs.vault
       pkgs.kubectl
       pkgs.minikube
@@ -160,6 +160,7 @@ in {
       pkgs.kompose
       #pkgs.seahorse # GPG key management GUI
       pkgs.speedcrunch
+      pkgs.dia
     ];
 
     programs.home-manager.enable = true;
