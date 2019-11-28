@@ -5,11 +5,12 @@
   ];
 
   boot.extraModprobeConfig = ''
-    options zfs zfs_arc_max=1073741824
-    options zfs zfs_arc_sys_free=1073741824
+    options zfs zfs_arc_min=100000000
+    options zfs zfs_arc_max=1000000000
+    options zfs zfs_arc_sys_free=4000000000
   '';
 
-  boot.kernel.sysctl = { "vm.swappiness" = 1; };
+  boot.kernel.sysctl = { "vm.swappiness" = 10; };
 
   # Suspected bluetooth causing hardware issues 
   hardware.bluetooth.powerOnBoot = false;
@@ -29,8 +30,8 @@
     #"i915.enable_rc6=1"
     #"i915.modeset=1"
     "zswap.enabled=1"
-    "zfs.zfs_arc_max=1073741824"
-    "zfs.zfs_arc_sys_free=1073741824"
+    "zfs.zfs_arc_max=1000000000"
+    "zfs.zfs_arc_sys_free=4000000000"
   ];
 
   nix.maxJobs = lib.mkDefault 4; # 8
