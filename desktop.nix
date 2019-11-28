@@ -119,6 +119,18 @@
     cudatoolkit
   ];
 
+    # Enable cron service
+  services.cron = {
+    enable = true;
+    mailto = "bscholtz.bds@gmail.com";
+    systemCronJobs = [
+      #"*/5 * * * *      root    date >> /tmp/cron.log"
+      "30 09 * * *      bscholtz        . /etc/profile; . ~/.bash_profile; ~/.bin/mail/mail-daily"
+      #"*/1 * * * *      bscholtz        . /etc/profile; . ~/.bash_profile; ~/.bin/mail/mail-periodic"
+      "*/5 * * * *      bscholtz        . /etc/profile; . ~/.bash_profile; ~/.bin/duck.sh >/dev/null 2>&1"
+    ];
+  };
+
   # This value determines the NixOS release with which your system is to be
   # compatible, in order to avoid breaking some software such as database
   # servers. You should change this only after NixOS release notes say you
