@@ -70,7 +70,7 @@
   };
 
   #services.xserver.windowManager.xmonad = {
-  #enable = true;
-  #enableContribAndExtras = true;
+  # enable = true;
+  # enableContribAndExtras = true;
   #};
 }

@@ -48,6 +48,7 @@
       nixos-switch = "sudo nixos-rebuild switch";
       refresh-kde-menu = "kbuildsycoca5";
       compose = "docker-compose";
+      vim = "nvim";
     };
   };
 
@@ -60,7 +61,7 @@
       theme = "avit";
       plugins = [ 
         "z" 
-        "nix-shell"
+        #"nix-shell"
         #"fzf" 
       ];
     };

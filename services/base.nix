@@ -62,7 +62,13 @@
     };
   };
 
-  services.mongodb.enable = true;
+  services.mongodb = {
+    enable = true;
+    extraConfig = ''
+      net:
+        port: 27018
+    '';
+  };
 
   services.postgresql = {
     enable = true;
