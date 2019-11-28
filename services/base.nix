@@ -28,7 +28,7 @@
   };
 
   services.ipfs = {
-    enable = false;
+    enable = true;
     autoMount = true;
   };
 

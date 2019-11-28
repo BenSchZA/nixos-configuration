@@ -1,6 +1,6 @@
-{config, ...}:
+{config, pkgs, ...}:
 
 {
   services.xrdp.enable = true;
-  #services.xrdp.defaultWindowManager = "${pkgs.icewm}/bin/icewm";
+  services.xrdp.defaultWindowManager = "${config.services.xserver.displayManager.session.script} plasma5+none";
 }

@@ -40,21 +40,7 @@
     gdm.wayland = false;
   };
 
-  #services.xserver.windowManager.i3.enable = true;
-  services.xserver.desktopManager = {
-    default = "bspwm";
-    xterm.enable = false;
-    xfce = {
-      enable = false;
-      noDesktop = true;
-      enableXfwm = false;
-    };
-    plasma5.enable = false;
-    gnome3.enable = true;
-    mate.enable = true;
-    pantheon.enable = false;
-  };
-  
+  services.xserver.windowManager.i3.enable = false;
   services.xserver.windowManager.bspwm = {
     enable = true;
     configFile = "/home/bscholtz/.config/bspwm/bspwmrc";
@@ -69,8 +55,8 @@
     time = 10;
   };
 
-  #services.xserver.windowManager.xmonad = {
-  # enable = true;
-  # enableContribAndExtras = true;
-  #};
+  services.xserver.windowManager.xmonad = {
+    enable = false;
+    enableContribAndExtras = true;
+  };
 }
