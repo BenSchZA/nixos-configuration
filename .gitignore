@@ -2,3 +2,4 @@
 secret.nix
 configuration.nix
 hardware-configuration.nix
+.history/
