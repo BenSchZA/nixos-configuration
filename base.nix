@@ -48,6 +48,7 @@
       nixos-switch = "sudo nixos-rebuild switch";
       refresh-kde-menu = "kbuildsycoca5";
       compose = "docker-compose";
+      vim = "nvim";
     };
   };
 
@@ -60,7 +61,7 @@
       theme = "avit";
       plugins = [ 
         "z" 
-        "nix-shell"
+        #"nix-shell"
         #"fzf" 
       ];
     };
@@ -97,9 +98,18 @@
     overpass
     inconsolata
     powerline-fonts
+    source-serif-pro
   ];
 
-  fonts.fontconfig.ultimate.enable = true;
+  fonts.fontconfig = {
+	ultimate.enable = true;
+      	penultimate.enable = false;
+      	defaultFonts = {
+        	monospace = [ "Source Code Pro" ];
+        	sansSerif = [ "Source Sans Pro" ];
+        	serif = [ "Source Serif Pro" ];
+      	};
+  };
 
   # Set your time zone.
   time.timeZone = "Africa/Johannesburg";

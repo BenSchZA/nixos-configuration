@@ -12,6 +12,10 @@
     wifi.macAddress = "random";
   };
   networking.nameservers = [ "1.1.1.1" ];
+  networking.extraHosts =
+  ''
+    127.0.0.1 aquarius
+  '';
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";

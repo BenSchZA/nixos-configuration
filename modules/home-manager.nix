@@ -94,7 +94,7 @@ in {
       pkgs.debootstrap
       pkgs.chromium
       pkgs.macchanger
-      pkgs.minecraft
+      #pkgs.minecraft
       
       #pkgs.yarn
       #pkgs.nodejs-10_x

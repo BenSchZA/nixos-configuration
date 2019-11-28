@@ -62,7 +62,17 @@
     };
   };
 
+<<<<<<< HEAD
   services.mongodb.enable = false;
+=======
+  services.mongodb = {
+    enable = true;
+    extraConfig = ''
+      net:
+        port: 27018
+    '';
+  };
+>>>>>>> b5a61ded644b90107e11d4088def79efd86300e0
 
   services.postgresql = {
     enable = true;
