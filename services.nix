@@ -39,7 +39,7 @@
   };
 
   # localhost:9000
-  services.peerflix.enable = true;
+  services.peerflix.enable = false;
   
   # localhost:8384
   services.syncthing = {

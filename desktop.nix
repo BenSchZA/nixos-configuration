@@ -31,6 +31,11 @@
 
   services.xserver.videoDrivers = [ "nvidia" ]; 
 
+  services.ipfs = {
+    enable = true;
+    autoMount = true;
+  };
+
   services.xserver.desktopManager = {
     default = "plasma5";
     xterm.enable = false;
@@ -137,8 +142,8 @@
 
     gnumake
     pciutils
-    #gcc
-    #cudatoolkit
+    gcc
+    cudatoolkit
     linuxPackages.nvidia_x11
   ];
 

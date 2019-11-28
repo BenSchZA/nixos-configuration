@@ -161,6 +161,7 @@ in {
       #pkgs.seahorse # GPG key management GUI
       pkgs.speedcrunch
       pkgs.dia
+      pkgs.buku
     ];
 
     programs.home-manager.enable = true;
