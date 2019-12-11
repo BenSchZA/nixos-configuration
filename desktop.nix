@@ -143,7 +143,7 @@
     gnumake
     pciutils
     gcc
-    cudatoolkit
+    #cudatoolkit
     linuxPackages.nvidia_x11
   ];
 

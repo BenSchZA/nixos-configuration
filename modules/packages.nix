@@ -17,7 +17,7 @@
 
   nixpkgs.config = {
     allowUnfree = true;
-    cudaSupport = true;
+    cudaSupport = false;
     packageOverrides = pkgs: rec {
       polybar = pkgs.polybar.override {
         alsaSupport = true;

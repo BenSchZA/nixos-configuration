@@ -162,6 +162,7 @@ in {
       pkgs.speedcrunch
       pkgs.dia
       pkgs.buku
+      pkgs.neovim
     ];
 
     programs.home-manager.enable = true;
