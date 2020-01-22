@@ -70,6 +70,7 @@
   };
 
   programs.adb.enable = true;
+  programs.java.enable = true;
 
   programs.gnupg.agent = {
     enable = false;
