@@ -6,7 +6,7 @@
 
   boot.extraModprobeConfig = ''
     options zfs zfs_arc_min=100000000
-    options zfs zfs_arc_max=1000000000
+    options zfs zfs_arc_max=4000000000
     options zfs zfs_arc_sys_free=4000000000
   '';
 
@@ -30,7 +30,7 @@
     #"i915.enable_rc6=1"
     #"i915.modeset=1"
     "zswap.enabled=1"
-    "zfs.zfs_arc_max=1000000000"
+    "zfs.zfs_arc_max=4000000000"
     "zfs.zfs_arc_sys_free=4000000000"
   ];
 
