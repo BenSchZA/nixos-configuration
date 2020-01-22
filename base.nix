@@ -83,6 +83,7 @@
     defaultLocale = "en_US.UTF-8";
   };
 
+  fonts.enableDefaultFonts = true;
   fonts.fonts = with pkgs; [
     terminus_font
     noto-fonts

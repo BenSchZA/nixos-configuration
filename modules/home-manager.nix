@@ -202,6 +202,20 @@ in {
       ];
     };
 
+    programs.texlive = {
+    	enable = true;
+	extraPackages = texlive: {
+		inherit (texlive) scheme-basic collection-basic collection-latex enumitem fontawesome xkeyval
+		xetex setspace fontspec
+                chktex xifthen ifmtarg filehook
+                upquote tools ms geometry graphics oberdiek
+                fancyhdr lastpage xcolor etoolbox unicode-math
+                ucharcat sourcesanspro tcolorbox pgf environ
+                trimspaces parskip hyperref url euenc
+                collection-fontsrecommended;
+	};
+    };
+
     programs.urxvt = {
       enable = true;
       transparent = false;
