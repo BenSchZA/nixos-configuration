@@ -165,6 +165,7 @@ in {
       pkgs.buku
       (pkgs.wine.override { wineBuild = "wineWow"; })
       #pkgs.texlive.combined.scheme-medium
+      pkgs.neovim
     ];
 
     programs.home-manager.enable = true;
