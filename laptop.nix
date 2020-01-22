@@ -39,9 +39,9 @@
       enableXfwm = false;
     };
     plasma5.enable = false;
-    gnome3.enable = true;
+    gnome3.enable = false;
     mate.enable = false;
-    pantheon.enable = false;
+    pantheon.enable = true;
   };
 
   services.earlyoom = {
@@ -69,7 +69,6 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     kgpg
-    polybar
     wget
     vim
     firefox

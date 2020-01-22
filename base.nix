@@ -49,6 +49,7 @@
       refresh-kde-menu = "kbuildsycoca5";
       compose = "docker-compose";
       vim = "nvim";
+      emacs = "XLIB_SKIP_ARGB_VISUALS=1 emacs";
     };
   };
 
@@ -82,6 +83,7 @@
     defaultLocale = "en_US.UTF-8";
   };
 
+  fonts.enableDefaultFonts = true;
   fonts.fonts = with pkgs; [
     terminus_font
     noto-fonts

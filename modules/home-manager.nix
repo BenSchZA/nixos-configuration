@@ -72,15 +72,15 @@ in {
       pkgs.geoclue2
       pkgs.slack
       pkgs.spotify
-      (pkgs.zoom-us.overrideAttrs (super: {
-        postInstall = ''
-          ${super.postInstall}
-          wrapProgram $out/bin/zoom-us --set LIBGL_ALWAYS_SOFTWARE 1
-        '';
-      }))
+      #(pkgs.zoom-us.overrideAttrs (super: {
+      #  postInstall = ''
+      #    ${super.postInstall}
+      #    wrapProgram $out/bin/zoom-us --set LIBGL_ALWAYS_SOFTWARE 1
+      #  '';
+      #}))
       #pkgs.tor-browser-bundle
       #pkgs.hedgewars
-      pkgs.virtualbox
+      #pkgs.virtualbox
       pkgs.libreoffice
       pkgs.spectacle
       pkgs.qtcreator
@@ -89,7 +89,8 @@ in {
       pkgs.neofetch
       pkgs.ranger
       pkgs.thefuck
-      pkgs.tldr
+      #pkgs.tldr
+      pkgs.tealdeer # Rust version of tldr
       pkgs.zim
       pkgs.debootstrap
       pkgs.chromium
@@ -108,13 +109,13 @@ in {
       pkgs.mongodb-compass
       
       pkgs.octave
-      pkgs.vscode
+      #pkgs.vscode
       pkgs.kicad
       pkgs.blueman
       pkgs.filezilla
       pkgs.apacheHttpd
       pkgs.direnv
-      pkgs.discord
+      #pkgs.discord
       pkgs.dmenu
       pkgs.iodine
       #pkgs.lorri
@@ -162,6 +163,8 @@ in {
       pkgs.speedcrunch
       pkgs.dia
       pkgs.buku
+      (pkgs.wine.override { wineBuild = "wineWow"; })
+      #pkgs.texlive.combined.scheme-medium
       pkgs.neovim
     ];
 
@@ -201,6 +204,20 @@ in {
         })
         pkgs.vscode-extensions.bbenoist.Nix
       ];
+    };
+
+    programs.texlive = {
+    	enable = true;
+	extraPackages = texlive: {
+		inherit (texlive) scheme-basic collection-basic collection-latex enumitem fontawesome xkeyval
+		xetex setspace fontspec
+                chktex xifthen ifmtarg filehook
+                upquote tools ms geometry graphics oberdiek
+                fancyhdr lastpage xcolor etoolbox unicode-math
+                ucharcat sourcesanspro tcolorbox pgf environ
+                trimspaces parskip hyperref url euenc
+                collection-fontsrecommended;
+	};
     };
 
     programs.urxvt = {
