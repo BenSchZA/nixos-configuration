@@ -5,14 +5,14 @@
   ];
 
   boot.kernelParams = [
-    "zswap.enabled=1"
-    "zfs.zfs_arc_max=5000000000"
-    "zfs.zfs_arc_sys_free=5000000000"
+    "zswap.enabled=0"
+    "zfs.zfs_arc_max=3000000000"
+    "zfs.zfs_arc_sys_free=3000000000"
   ];
 
   boot.extraModprobeConfig = ''
-    options zfs zfs_arc_max=5000000000
-    options zfs zfs_arc_sys_free=5000000000
+    options zfs zfs_arc_max=3000000000
+    options zfs zfs_arc_sys_free=3000000000
   '';
   
   boot.kernel.sysctl = { "vm.swappiness" = 10; };
