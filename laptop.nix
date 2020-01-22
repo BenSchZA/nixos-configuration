@@ -69,7 +69,6 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     kgpg
-    polybar
     wget
     vim
     firefox
