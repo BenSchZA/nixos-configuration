@@ -72,15 +72,15 @@ in {
       pkgs.geoclue2
       pkgs.slack
       pkgs.spotify
-      (pkgs.zoom-us.overrideAttrs (super: {
-        postInstall = ''
-          ${super.postInstall}
-          wrapProgram $out/bin/zoom-us --set LIBGL_ALWAYS_SOFTWARE 1
-        '';
-      }))
+      #(pkgs.zoom-us.overrideAttrs (super: {
+      #  postInstall = ''
+      #    ${super.postInstall}
+      #    wrapProgram $out/bin/zoom-us --set LIBGL_ALWAYS_SOFTWARE 1
+      #  '';
+      #}))
       #pkgs.tor-browser-bundle
       #pkgs.hedgewars
-      pkgs.virtualbox
+      #pkgs.virtualbox
       pkgs.libreoffice
       pkgs.spectacle
       pkgs.qtcreator
@@ -89,7 +89,8 @@ in {
       pkgs.neofetch
       pkgs.ranger
       pkgs.thefuck
-      pkgs.tldr
+      #pkgs.tldr
+      pkgs.tealdeer # Rust version of tldr
       pkgs.zim
       pkgs.debootstrap
       pkgs.chromium
@@ -108,13 +109,13 @@ in {
       pkgs.mongodb-compass
       
       pkgs.octave
-      pkgs.vscode
+      #pkgs.vscode
       pkgs.kicad
       pkgs.blueman
       pkgs.filezilla
       pkgs.apacheHttpd
       pkgs.direnv
-      pkgs.discord
+      #pkgs.discord
       pkgs.dmenu
       pkgs.iodine
       #pkgs.lorri
@@ -162,6 +163,8 @@ in {
       pkgs.speedcrunch
       pkgs.dia
       pkgs.buku
+      (pkgs.wine.override { wineBuild = "wineWow"; })
+      #pkgs.texlive.combined.scheme-medium
     ];
 
     programs.home-manager.enable = true;
