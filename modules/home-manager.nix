@@ -94,6 +94,7 @@ in {
       pkgs.zim
       pkgs.debootstrap
       pkgs.chromium
+      pkgs.brave
       pkgs.macchanger
       #pkgs.minecraft
       
@@ -166,6 +167,7 @@ in {
       (pkgs.wine.override { wineBuild = "wineWow"; })
       #pkgs.texlive.combined.scheme-medium
       pkgs.neovim
+      pkgs.synergy
     ];
 
     programs.home-manager.enable = true;
