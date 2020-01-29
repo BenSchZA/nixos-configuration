@@ -18,9 +18,10 @@
     ./modules/packages.nix
     ./modules/networking.nix
     ./modules/home-manager.nix
+    ./modules/synergy-server.nix
     ./secret.nix
   ];
-
+services.xserver.displayManager.gdm.autoSuspend = false;
   #nix.nixPath = [
   #  "nixpkgs=/home/bscholtz/workspace/nixpkgs"
   #  "nixos-config=/etc/nixos/configuration.nix"
@@ -44,10 +45,10 @@
       noDesktop = true;
       enableXfwm = false;
     };
-    plasma5.enable = true;
-    gnome3.enable = true;
+    plasma5.enable = false;
+    gnome3.enable = false;
     mate.enable = false;
-    pantheon.enable = false;
+    pantheon.enable = true;
   };
   
   # CUDA support
@@ -110,8 +111,10 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.bscholtz = {
      isNormalUser = true;
-     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+     extraGroups = [ "wheel" "plugdev" ]; # Enable ‘sudo’ for the user.
   };
+
+  users.groups.plugdev = { };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

@@ -109,13 +109,13 @@ in {
       pkgs.mongodb-compass
       
       pkgs.octave
-      #pkgs.vscode
+      pkgs.vscode
       pkgs.kicad
       pkgs.blueman
       pkgs.filezilla
       pkgs.apacheHttpd
       pkgs.direnv
-      #pkgs.discord
+      pkgs.discord
       pkgs.dmenu
       pkgs.iodine
       #pkgs.lorri
@@ -166,6 +166,8 @@ in {
       (pkgs.wine.override { wineBuild = "wineWow"; })
       #pkgs.texlive.combined.scheme-medium
       pkgs.neovim
+      pkgs.kdenlive pkgs.ffmpeg pkgs.frei0r 
+      pkgs.peek
     ];
 
     programs.home-manager.enable = true;
