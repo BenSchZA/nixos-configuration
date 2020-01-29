@@ -49,7 +49,7 @@
       refresh-kde-menu = "kbuildsycoca5";
       compose = "docker-compose";
       vim = "nvim";
-      emacs = "XLIB_SKIP_ARGB_VISUALS=1 emacs";
+      emacs = "XLIB_SKIP_ARGB_VISUALS=1 emacs & disown";
     };
   };
 
