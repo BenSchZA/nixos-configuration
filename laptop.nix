@@ -19,6 +19,7 @@
     ./modules/packages.nix
     ./modules/networking.nix
     ./modules/home-manager.nix
+    ./modules/synergy-client.nix
     ./secret.nix
   ];
 
