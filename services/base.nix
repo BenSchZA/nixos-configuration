@@ -63,7 +63,7 @@
   };
 
   services.mongodb = {
-    enable = false;
+    enable = true;
     extraConfig = ''
       net:
         port: 27018
@@ -142,11 +142,11 @@
 
   services.redshift = {
     enable = false;
-    latitude = "-33.9249";
-    longitude = "18.4241";
     temperature.day = 6500;
     temperature.night = 2700;
   };
+  location.latitude = -33.9249;
+  location.longitude = 18.4241;
 
   services.urxvtd.enable = true;
   services.dbus.packages = with pkgs; [ blueman ];
