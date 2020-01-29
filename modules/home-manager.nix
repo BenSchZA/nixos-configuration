@@ -72,6 +72,7 @@ in {
       pkgs.geoclue2
       pkgs.slack
       pkgs.spotify
+      pkgs.zoom-us
       #(pkgs.zoom-us.overrideAttrs (super: {
       #  postInstall = ''
       #    ${super.postInstall}
@@ -122,7 +123,8 @@ in {
       #pkgs.lorri
 
       pkgs.remind
-      #pkgs.postman 
+      pkgs.postman 
+      #unstable.postman
       pkgs.opera
       pkgs.openssl
       pkgs.lynis
@@ -157,7 +159,6 @@ in {
       pkgs.bettercap
       pkgs.bc
       pkgs.curl
-      #unstable.postman
       pkgs.openscad
       pkgs.kompose
       #pkgs.seahorse # GPG key management GUI
@@ -169,6 +170,28 @@ in {
       pkgs.neovim
       pkgs.synergy
       pkgs.peek
+      pkgs.tmux
+      pkgs.pencil
+      pkgs.hugo
+      pkgs.plank
+      pkgs.vscode
+      pkgs.spotifyd
+      pkgs.texmaker
+      pkgs.unzip
+      pkgs.weather
+      pkgs.darktable
+      pkgs.ksysguard
+      pkgs.nixfmt
+      pkgs.asciinema
+      pkgs.msr-tools
+      pkgs.pypi2nix
+      pkgs.rofi
+      pkgs.feh
+      pkgs.ripgrep-all
+      pkgs.protonmail-bridge
+      pkgs.awscli
+      pkgs.helm
+      #@
     ];
 
     programs.home-manager.enable = true;
