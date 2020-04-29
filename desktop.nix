@@ -14,6 +14,8 @@
     ./services/xserver.nix
     ./services/xrdp.nix
     ./services/traefik.nix
+    ./services/phoenix-blog.nix
+    ./services/avahi.nix
     ./modules/virtualization.nix
     ./modules/packages.nix
     ./modules/networking.nix
@@ -31,6 +33,23 @@ services.xserver.displayManager.gdm.autoSuspend = false;
   networking.hostId = "3f3a8aa4";
 
   services.xserver.videoDrivers = [ "nvidia" ]; 
+
+  services.mongodb = {
+    enable = true;
+    extraConfig = ''
+      net:
+        port: 27017
+    '';
+  };
+
+  services.neo4j = {
+  	enable = true;
+  };
+
+  services.zerotierone = {
+    enable = true;
+    joinNetworks = [];
+  };
 
   services.ipfs = {
     enable = true;
@@ -110,7 +129,7 @@ services.xserver.displayManager.gdm.autoSuspend = false;
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.bscholtz = {
      isNormalUser = true;
-     extraGroups = [ "wheel" "plugdev" ]; # Enable ‘sudo’ for the user.
+     extraGroups = [ "wheel" "plugdev" "vboxusers" ]; # Enable ‘sudo’ for the user.
   };
 
   users.groups.plugdev = { };
@@ -146,6 +165,7 @@ services.xserver.displayManager.gdm.autoSuspend = false;
     gcc
     #cudatoolkit
     linuxPackages.nvidia_x11
+    #linuxPackages.virtualbox
   ];
 
     # Enable cron service

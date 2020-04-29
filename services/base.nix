@@ -62,16 +62,9 @@
     };
   };
 
-  services.mongodb = {
-    enable = true;
-    extraConfig = ''
-      net:
-        port: 27018
-    '';
-  };
-
   services.postgresql = {
     enable = true;
+    port = 5432;
     package = pkgs.postgresql_10;
     enableTCPIP = true;
     authentication = pkgs.lib.mkOverride 10 ''

@@ -1,5 +1,4 @@
 { config, pkgs, ... }:
-with import <nixpkgs> { };
 
 let
 
@@ -40,7 +39,7 @@ in {
   imports = [
     "${
       builtins.fetchTarball
-      "https://github.com/rycee/home-manager/archive/release-19.03.tar.gz"
+      "https://github.com/rycee/home-manager/archive/release-20.03.tar.gz"
     }/nixos"
   ];
 
@@ -79,7 +78,7 @@ in {
       #    wrapProgram $out/bin/zoom-us --set LIBGL_ALWAYS_SOFTWARE 1
       #  '';
       #}))
-      #pkgs.tor-browser-bundle
+      pkgs.torbrowser
       #pkgs.hedgewars
       #pkgs.virtualbox
       pkgs.libreoffice
@@ -111,7 +110,7 @@ in {
       pkgs.mongodb-compass
       
       pkgs.octave
-      pkgs.vscode
+      #pkgs.vscode
       pkgs.kicad
       pkgs.blueman
       pkgs.filezilla
@@ -125,7 +124,6 @@ in {
       pkgs.remind
       pkgs.postman 
       #unstable.postman
-      pkgs.opera
       pkgs.openssl
       pkgs.lynis
       pkgs.xorg.xbacklight
@@ -183,7 +181,7 @@ in {
       pkgs.nixfmt
       pkgs.asciinema
       pkgs.msr-tools
-      pkgs.pypi2nix
+      #pkgs.pypi2nix # Rather install using `nix-env -if https://github.com/nix-community/pypi2nix/tarball/master`
       pkgs.rofi
       pkgs.feh
       pkgs.ripgrep-all
@@ -236,7 +234,7 @@ in {
     programs.texlive = {
     	enable = true;
 	extraPackages = texlive: {
-		inherit (texlive) scheme-basic collection-basic collection-latex enumitem fontawesome xkeyval
+		inherit (texlive) scheme-full collection-basic collection-latex enumitem fontawesome5 fontawesome xkeyval
 		xetex setspace fontspec
                 chktex xifthen ifmtarg filehook
                 upquote tools ms geometry graphics oberdiek

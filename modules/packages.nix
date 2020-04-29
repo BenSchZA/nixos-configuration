@@ -18,6 +18,7 @@
   nixpkgs.config = {
     allowUnfree = true;
     cudaSupport = false;
+    android_sdk.accept_license = true;
     packageOverrides = pkgs: rec {
       polybar = pkgs.polybar.override {
         alsaSupport = true;
