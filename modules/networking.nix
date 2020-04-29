@@ -80,6 +80,7 @@
     57621
     8545
     3000 # development
+    4000
     3389 # rdp
   ];
   networking.firewall.allowedUDPPorts = [
