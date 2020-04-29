@@ -38,7 +38,6 @@ services.xserver.displayManager.gdm.autoSuspend = false;
   };
 
   services.xserver.desktopManager = {
-    default = "plasma5";
     xterm.enable = false;
     xfce = {
       enable = false;

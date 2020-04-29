@@ -81,6 +81,7 @@
     8545
     3000 # development
     3389 # rdp
+    19000
   ];
   networking.firewall.allowedUDPPorts = [
     1714

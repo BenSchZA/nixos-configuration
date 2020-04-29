@@ -20,6 +20,7 @@
     ./modules/networking.nix
     ./modules/home-manager.nix
     ./modules/synergy-client.nix
+    ./modules/wireguard-client.nix
     ./secret.nix
   ];
 
@@ -32,7 +33,6 @@
   #powerManagement.cpuFreqGovernor = null; # Managed by tlp
 
   services.xserver.desktopManager = {
-    default = "bspwm";
     xterm.enable = false;
     xfce = {
       enable = false;

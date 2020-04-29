@@ -25,16 +25,19 @@
   #};
 
   # Enable touchpad support.
-  services.xserver.libinput.enable = true;
-  services.xserver.multitouch.enable = true;
+  services.xserver.libinput = {
+  	enable = true;
+	naturalScrolling = false; 
+	middleEmulation = true; 
+	tapping = true;
+  };
 
   # Enable the KDE Desktop Environment.
   services.xserver.displayManager = {
     sddm.enable = false;
     lightdm = {
       enable = true;
-      #warning: The Pantheon greeter is suboptimal in NixOS and can possibly put you in a situation where you cannot start a session when switching desktopManagers.
-      greeters.pantheon.enable = false;
+      greeters.pantheon.enable = true;
     };
     gdm.enable = false;
     gdm.wayland = false;

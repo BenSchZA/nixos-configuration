@@ -174,7 +174,6 @@ in {
       pkgs.pencil
       pkgs.hugo
       pkgs.plank
-      pkgs.vscode
       pkgs.spotifyd
       pkgs.texmaker
       pkgs.unzip
@@ -188,9 +187,11 @@ in {
       pkgs.rofi
       pkgs.feh
       pkgs.ripgrep-all
-      pkgs.protonmail-bridge
+      #pkgs.protonmail-bridge
       pkgs.awscli
       pkgs.helm
+      pkgs.franz
+      pkgs.wireguard
       #@
     ];
 

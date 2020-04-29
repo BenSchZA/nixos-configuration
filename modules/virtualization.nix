@@ -9,12 +9,12 @@
       enableOnBoot = true;
     };
 
-    #virtualbox = {
-    #  host.enable = true;
-    #  host.addNetworkInterface = true;
-    #  host.enableExtensionPack = true;
-    #  guest.enable = false;
-    #};
+    virtualbox = {
+      host.enable = true;
+      host.addNetworkInterface = true;
+      host.enableExtensionPack = true;
+      guest.enable = false;
+    };
 
     libvirtd.enable = true;
   };
