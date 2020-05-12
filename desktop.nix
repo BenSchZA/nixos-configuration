@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, options, ... }:
 
 {
   imports = [
@@ -12,10 +12,11 @@
     ./services/zfs.nix
     ./services/power.nix
     ./services/xserver.nix
-    ./services/xrdp.nix
+    #./services/xrdp.nix
     ./services/traefik.nix
     ./services/phoenix-blog.nix
     ./services/avahi.nix
+    ./services/redis.nix
     ./modules/virtualization.nix
     ./modules/packages.nix
     ./modules/networking.nix
@@ -24,10 +25,11 @@
     ./secret.nix
   ];
 services.xserver.displayManager.gdm.autoSuspend = false;
-  #nix.nixPath = [
-  #  "nixpkgs=/home/bscholtz/workspace/nixpkgs"
-  #  "nixos-config=/etc/nixos/configuration.nix"
-  #];
+  nix.nixPath = options.nix.nixPath.default ++ [
+    #"nixpkgs=/home/bscholtz/workspace/nixpkgs"
+    #"nixos-config=/etc/nixos/configuration.nix"
+    "nixpkgs-overlays=/home/bscholtz/.config/nixpkgs/overlays/"
+  ];
 
   networking.hostName = "nixos-desktop"; # Define your hostname.
   networking.hostId = "3f3a8aa4";
@@ -75,7 +77,7 @@ services.xserver.displayManager.gdm.autoSuspend = false;
     serviceConfig.ExecStart = "/run/current-system/sw/bin/nvidia-smi"; #"${pkgs.linuxPackages.nvidia_x11}/bin/nvidia-smi";
   };
 
-  services.dbus.packages = with pkgs; [ gnome3.dconf gnome2.GConf hamster-time-tracker];
+  services.dbus.packages = with pkgs; [ gnome3.dconf gnome2.GConf ]; #hamster-time-tracker
 
   #services.xserver.displayManager.gdm.enable = true;
   #services.xserver.desktopManager.gnome3.enable = true;

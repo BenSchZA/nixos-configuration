@@ -79,7 +79,7 @@
   };
 
   services.vault.enable = false; 
-  services.keybase.enable = false;
+  services.keybase.enable = true;
 
   #services.kubernetes = {
   #  roles = ["master" "node"];
