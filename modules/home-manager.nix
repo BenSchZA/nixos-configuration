@@ -101,7 +101,7 @@ in {
       #pkgs.yarn
       #pkgs.nodejs-10_x
       
-      terraform
+      #terraform
       pkgs.vault
       pkgs.kubectl
       pkgs.minikube
@@ -111,7 +111,7 @@ in {
       
       pkgs.octave
       #pkgs.vscode
-      pkgs.kicad
+      #pkgs.kicad
       pkgs.blueman
       pkgs.filezilla
       pkgs.apacheHttpd

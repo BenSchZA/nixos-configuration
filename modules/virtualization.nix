@@ -10,7 +10,7 @@
     };
 
     virtualbox = {
-      host.enable = true;
+      host.enable = false;
       host.addNetworkInterface = true;
       host.enableExtensionPack = true;
       guest.enable = false;
