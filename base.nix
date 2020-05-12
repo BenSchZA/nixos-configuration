@@ -51,6 +51,12 @@
       vim = "nvim";
       emacs = "XLIB_SKIP_ARGB_VISUALS=1 emacs & disown";
     };
+
+    interactiveShellInit = ''
+      if [ "$TILIX_ID" ] || [ "$VTE_VERSION" ]; then
+        source "${pkgs.vte.outPath}/etc/profile.d/vte.sh"
+      fi
+    '';
   };
 
   #programs.fish.enable = true;
@@ -59,7 +65,8 @@
     enableCompletion = true;
     ohMyZsh = {
       enable = true;
-      theme = "avit";
+      #theme = "avit";
+      theme = "robbyrussell";
       plugins = [ 
         "z" 
         #"nix-shell"
