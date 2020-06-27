@@ -4,6 +4,9 @@
 
 { config, pkgs, ... }:
 {
+  imports = [
+    ./modules/virtualbox.nix
+  ];
   # Use the systemd-boot EFI boot loader.
   boot = {
     loader = {

@@ -3,7 +3,7 @@
 let
 
   nixos = import <nixos> { };
-  #unstable = import <nixpkgs-unstable> { };
+  unstable = import <nixpkgs-unstable> { };
 
   colours = {
     accent = "#E47023";
@@ -45,7 +45,7 @@ in {
 
   home-manager.users.bscholtz = {
     nixpkgs.config.allowUnfree = true;
-    home.packages = [
+    home.packages = with pkgs; [
       pkgs.home-manager
       pkgs.android-udev-rules
       pkgs.thunderbird
@@ -78,7 +78,7 @@ in {
       #    wrapProgram $out/bin/zoom-us --set LIBGL_ALWAYS_SOFTWARE 1
       #  '';
       #}))
-      pkgs.torbrowser
+      #pkgs.torbrowser
       #pkgs.hedgewars
       #pkgs.virtualbox
       pkgs.libreoffice
@@ -190,6 +190,13 @@ in {
       pkgs.helm
       pkgs.franz
       pkgs.wireguard
+      unstable.polybar
+      unstable.i3lock
+      unstable.hexchat
+      unstable.quasselClient
+      vagrant
+      mosh
+      autossh
       #@
     ];
 

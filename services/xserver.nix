@@ -43,6 +43,8 @@
     gdm.wayland = false;
   };
 
+  programs.sway.enable = true;
+
   services.xserver.windowManager.i3.enable = false;
   services.xserver.windowManager.bspwm = {
     enable = true;
