@@ -11,7 +11,7 @@
     wifi.powersave = false;
     wifi.macAddress = "random";
   };
-  networking.nameservers = [ "1.1.1.1" ];
+  networking.nameservers = [ "8.8.8.8" ];
   networking.extraHosts =
   ''
     127.0.0.1 aquarius
@@ -80,6 +80,7 @@
     57621
     3389 # rdp
     19000
+    6443
   ];
   networking.firewall.allowedUDPPorts = [
     1714
@@ -137,6 +138,7 @@
     50624
     50625
     3389 # rdp
+    6443
   ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;

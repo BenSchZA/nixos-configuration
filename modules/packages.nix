@@ -2,6 +2,10 @@
 
 {
   nix = {
+    package = pkgs.nixFlakes;
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
     binaryCaches = [ 
       "https://cache.nixos.org/" 
       "https://dapp.cachix.org" 

@@ -37,7 +37,7 @@
   
   # localhost:8384
   services.syncthing = {
-    enable = false;
+    enable = true;
     user = "bscholtz";
     dataDir = "${config.users.users.bscholtz.home}/.syncthing";
   };
@@ -81,13 +81,14 @@
   services.vault.enable = false; 
   services.keybase.enable = true;
 
-  #services.kubernetes = {
-  #  roles = ["master" "node"];
-  #  path = [ pkgs.zfs ];
-  #  apiserver.enable = true;
-  #};
-  #services.kubernetes.kubelet.extraOpts = "--fail-swap-on=false";
-  #services.kubernetes.addons.dashboard.enable = true;
+  # services.kubernetes = {
+  #   masterAddress = "localhost";
+  #   roles = ["master" "node"];
+  #   path = [ pkgs.zfs ];
+  #   apiserver.enable = true;
+  # };
+  # services.kubernetes.kubelet.extraOpts = "--fail-swap-on=false";
+  # services.kubernetes.addons.dashboard.enable = true;
 
   #services.kubernetes.apiserver.basicAuthFile = pkgs.writeText "users" ''
   #	kubernetes,admin,0 

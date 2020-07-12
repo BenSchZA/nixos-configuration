@@ -13,7 +13,7 @@
     ./services/power.nix
     ./services/xserver.nix
     #./services/xrdp.nix
-    ./services/traefik.nix
+    # ./services/traefik.nix
     ./services/phoenix-blog.nix
     ./services/avahi.nix
     ./services/redis.nix
@@ -23,6 +23,7 @@
     ./modules/home-manager.nix
     ./modules/synergy-server.nix
     ./secret.nix
+    ./modules/kubeadm/default.nix
   ];
 services.xserver.displayManager.gdm.autoSuspend = false;
   nix.nixPath = options.nix.nixPath.default ++ [
@@ -37,24 +38,34 @@ services.xserver.displayManager.gdm.autoSuspend = false;
   services.xserver.videoDrivers = [ "nvidia" ]; 
 
   services.mongodb = {
-    enable = true;
+    enable = false;
     extraConfig = ''
       net:
         port: 27017
     '';
   };
 
+  services.kubeadm = {
+    enable = false;
+    # resetOnStart = true;
+    role = "master";
+    apiserverAddress = "192.168.1.113";
+    bootstrapToken = "8tipwo.tst0nvf7wcaqjcj0";
+    discoveryTokenCaCertHash = "sha256:c3e9efd010c793d2c983ea17f1e7f9346adf6018d524db0793bf550e39b1a402";
+    nodeip = "192.168.1.113";
+  };
+
   services.neo4j = {
-  	enable = true;
+  	enable = false;
   };
 
   services.zerotierone = {
-    enable = true;
+    enable = false;
     joinNetworks = [];
   };
 
   services.ipfs = {
-    enable = true;
+    enable = false;
     autoMount = true;
   };
 

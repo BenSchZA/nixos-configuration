@@ -192,7 +192,13 @@ in {
       pkgs.helm
       pkgs.franz
       pkgs.wireguard
+      unstable.polybar
+      unstable.i3lock
+      unstable.hexchat
+      unstable.quasselClient
+      vagrant
       mosh
+      autossh
       #@
     ];
 
