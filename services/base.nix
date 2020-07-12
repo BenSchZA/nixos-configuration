@@ -28,7 +28,7 @@
   };
 
   services.ipfs = {
-    enable = true;
+    enable = false;
     autoMount = true;
   };
 
@@ -128,9 +128,9 @@
 
   services.tor = {
     # Slow SOCKS: port 9050
-    enable = true;
+    enable = false;
     # Fast SOCKS: port 9063
-    client.enable = true;
+    client.enable = false;
   };
 
   services.redshift = {
@@ -142,5 +142,5 @@
   location.longitude = 18.4241;
 
   services.urxvtd.enable = true;
-  services.dbus.packages = with pkgs; [ blueman ];
+  #services.dbus.packages = with pkgs; [ blueman ];
 }

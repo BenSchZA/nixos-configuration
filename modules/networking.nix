@@ -78,9 +78,6 @@
     1764
     6079
     57621
-    8545
-    3000 # development
-    4000
     3389 # rdp
     19000
   ];
@@ -139,8 +136,6 @@
     1194
     50624
     50625
-    8545
-    3000 # development port
     3389 # rdp
   ];
   # Or disable the firewall altogether.

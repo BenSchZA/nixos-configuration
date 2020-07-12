@@ -3,7 +3,7 @@
 let
 
   nixos = import <nixos> { };
-  #unstable = import <nixpkgs-unstable> { };
+  unstable = import <nixpkgs-unstable> { };
 
   colours = {
     accent = "#E47023";
@@ -45,7 +45,7 @@ in {
 
   home-manager.users.bscholtz = {
     nixpkgs.config.allowUnfree = true;
-    home.packages = [
+    home.packages = with pkgs; [
       pkgs.home-manager
       pkgs.android-udev-rules
       pkgs.thunderbird
@@ -71,14 +71,14 @@ in {
       pkgs.geoclue2
       pkgs.slack
       pkgs.spotify
-      pkgs.zoom-us
+      unstable.zoom-us
       #(pkgs.zoom-us.overrideAttrs (super: {
       #  postInstall = ''
       #    ${super.postInstall}
       #    wrapProgram $out/bin/zoom-us --set LIBGL_ALWAYS_SOFTWARE 1
       #  '';
       #}))
-      pkgs.torbrowser
+      #pkgs.torbrowser
       #pkgs.hedgewars
       #pkgs.virtualbox
       pkgs.libreoffice
@@ -93,7 +93,9 @@ in {
       pkgs.tealdeer # Rust version of tldr
       pkgs.zim
       pkgs.debootstrap
-      pkgs.chromium
+      (chromium.override {
+        commandLineArgs = "--load-media-router-component-extension=1";
+      })
       pkgs.brave
       pkgs.macchanger
       #pkgs.minecraft
@@ -110,7 +112,7 @@ in {
       pkgs.mongodb-compass
       
       pkgs.octave
-      #pkgs.vscode
+      vscode
       #pkgs.kicad
       pkgs.blueman
       pkgs.filezilla
@@ -190,6 +192,7 @@ in {
       pkgs.helm
       pkgs.franz
       pkgs.wireguard
+      mosh
       #@
     ];
 

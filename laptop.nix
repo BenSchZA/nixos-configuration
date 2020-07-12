@@ -15,6 +15,7 @@
     ./services/zfs.nix
     ./services/power.nix
     ./services/xserver.nix
+    ./services/avahi.nix
     ./modules/virtualization.nix
     ./modules/packages.nix
     ./modules/networking.nix
