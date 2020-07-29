@@ -34,16 +34,27 @@
 
   # Enable the KDE Desktop Environment.
   services.xserver.displayManager = {
-    sddm.enable = false;
+    sddm.enable = true;
     lightdm = {
-      enable = true;
+      enable = false;
       greeters.pantheon.enable = true;
     };
     gdm.enable = false;
     gdm.wayland = false;
   };
 
-  programs.sway.enable = true;
+  programs.sway = {
+    enable = true;
+    extraPackages = with pkgs; [
+      i3status
+      swaylock # lockscreen
+      swayidle
+      xwayland # for legacy apps
+      waybar # status bar
+      mako # notification daemon
+      kanshi # autorandr
+    ];
+  };
 
   services.xserver.windowManager.i3.enable = false;
   services.xserver.windowManager.bspwm = {
@@ -53,7 +64,7 @@
   };
 
   services.xserver.xautolock = {
-    enable = false;
+    enable = true;
     enableNotifier = true;
     notifier = ''${pkgs.libnotify}/bin/notify-send "Locking in 10 seconds"'';
     locker = "${pkgs.i3lock-pixeled}/bin/i3lock-pixeled";

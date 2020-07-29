@@ -56,7 +56,7 @@ in {
       pkgs.ark
       #pkgs.kdiff3
       pkgs.meld
-      pkgs.emacs
+      unstable.emacs
       pkgs.kdeconnect
       pkgs.simplescreenrecorder
       pkgs.docker-compose
@@ -178,7 +178,7 @@ in {
       pkgs.texmaker
       pkgs.unzip
       pkgs.weather
-      pkgs.darktable
+      #pkgs.darktable
       pkgs.ksysguard
       pkgs.nixfmt
       pkgs.asciinema
@@ -199,6 +199,9 @@ in {
       vagrant
       mosh
       autossh
+      audacity
+      obs-studio
+      kdenlive
       #@
     ];
 
@@ -207,6 +210,7 @@ in {
 
     services.network-manager-applet.enable = false;
     services.blueman-applet.enable = false;
+    services.lorri.enable = true;
     
     services.gpg-agent = {
       enable = true;

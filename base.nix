@@ -52,7 +52,7 @@
       refresh-kde-menu = "kbuildsycoca5";
       compose = "docker-compose";
       vim = "nvim";
-      emacs = "XLIB_SKIP_ARGB_VISUALS=1 emacs & disown";
+      #emacs = "XLIB_SKIP_ARGB_VISUALS=1 emacs & disown";
     };
 
     interactiveShellInit = ''
@@ -81,6 +81,7 @@
 
   programs.adb.enable = true;
   programs.java.enable = true;
+  programs.light.enable = true;
 
   programs.gnupg.agent = {
     enable = false;

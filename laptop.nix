@@ -36,10 +36,11 @@
   services.xserver.desktopManager = {
     xterm.enable = false;
     xfce = {
-      enable = false;
-      noDesktop = true;
-      enableXfwm = false;
+      enable = true;
+      noDesktop = false;
+      enableXfwm = true;
     };
+    maxx.enable = false;
     plasma5.enable = false;
     gnome3.enable = false;
     mate.enable = false;
@@ -57,6 +58,12 @@
     coreOffset = "-80";
     verbose = true;
   };
+
+  users.users.bscholtz = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" "plugdev" "vboxusers" "audio" "video" "sway" ]; # Enable ‘sudo’ for the user.
+  };
+
 
   users.users.guest = {
     isNormalUser = true;
