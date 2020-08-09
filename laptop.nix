@@ -23,6 +23,7 @@
     ./modules/synergy-client.nix
     ./modules/wireguard-client.nix
     ./secret.nix
+    ./modules/macos-kvm.nix
   ];
 
   boot.loader.grub.devices = [ "/dev/disk/by-id/nvme-PC300_NVMe_SK_hynix_256GB_ES79N45861080990K" ];

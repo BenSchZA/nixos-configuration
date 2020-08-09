@@ -1,5 +1,5 @@
 { config, lib, pkgs, ... }: {
-  boot.kernelPackages = pkgs.linuxPackages_latest; #_4_19;
+  boot.kernelPackages = pkgs.linuxPackages_latest_hardened;
 
   #boot.loader.grub.copyKernels = true;
   boot.kernelPatches = [
